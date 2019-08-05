@@ -1,0 +1,13 @@
+{% extends "feeds/base.html" %}
+{% load i18n l10n %}
+{% block feeds-content %}
+	<div class="d-flex align-items-center p-3 my-3 text-white-50 bg-purple rounded shadow-sm">
+		<i class="fas fa-glasses fa-3x mr-3"></i>
+		<div class="lh-100">
+			<h6 class="mb-0 text-white lh-100">{% trans "Veja Só" %}</h6>
+			<small>Feeds</small>
+		</div>
+	</div>
+	{% block feeds-stream-content %}
+	{% endblock %}
+{% endblock %}

@@ -1,0 +1,51 @@
+{% load i18n l10n %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="pt-br" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="pt-br" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="pt-br" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="pt-br"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="">
+        <title>{% block title %}Veja Soh! - Página de Login{% endblock %}</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://kit.fontawesome.com/bb08fc6c90.js"></script>
+        <style>
+            .bd-placeholder-img {
+                font-size: 1.125rem;
+                text-anchor: middle;
+                -webkit-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+      
+            @media (min-width: 768px) {
+                .bd-placeholder-img-lg {
+                  font-size: 3.5rem;
+                }
+            }
+        </style>
+        <!-- Custom styles for this template -->
+        <link rel="stylesheet" href="{% static 'accounts/css/signin.css' %}">
+    </head>
+    <body class="text-center">
+        {% bootstrap_messages %}
+        <form class="form-signin" method="POST" action="">
+            <i class="fas fa-glasses fa-5x"></i>
+            <h1 class="h3 mb-3 font-weight-normal">{% trans "Veja Só" %}</h1>
+            <p>Leitor de Feeds</p>
+            <label for="id_username" class="sr-only">{% trans 'Informe seu Login' %}</label>
+            <input type="text" id="id_username" class="form-control" placeholder="{% trans 'Informe seu Login' %}" required autofocus name="username">
+            <label for="id_password" class="sr-only">{% trans 'Informe sua Senha' %}</label>
+            <input type="password" id="id_password" class="form-control" placeholder="{% trans 'Informe sua Senha' %}" required name="password">
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{% trans "Efetuar Login" %}</button>
+            <a class="btn btn-lg btn-primary btn-block" href="#">{% trans "Desejo me cadastrar" %}</a>
+            {% csrf_token %}
+        </form>
+        
+    </body>
+</html>

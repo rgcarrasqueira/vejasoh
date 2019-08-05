@@ -1,0 +1,50 @@
+{% load i18n l10n %}
+{% load staticfiles %}
+{% load bootstrap4 %}
+<!DOCTYPE html>
+<!--[if lt IE 7 ]> <html lang="pt-br" class="ie6 ielt8"> <![endif]-->
+<!--[if IE 7 ]>    <html lang="pt-br" class="ie7 ielt8"> <![endif]-->
+<!--[if IE 8 ]>    <html lang="pt-br" class="ie8"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--> <html lang="pt-br"> <!--<![endif]-->
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<meta name="description" content="">
+		<title>{% block title %}Veja Soh! - Página de Login{% endblock %}</title>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://kit.fontawesome.com/bb08fc6c90.js"></script>
+		<style>
+			.bd-placeholder-img {
+				font-size: 1.125rem;
+				text-anchor: middle;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+	  
+			@media (min-width: 768px) {
+				.bd-placeholder-img-lg {
+				  font-size: 3.5rem;
+				}
+			}
+		</style>
+		<!-- Custom styles for this template -->
+		<link rel="stylesheet" href="{% static 'accounts/css/signin.css' %}">
+	</head>
+	<body class="text-center">
+		{% bootstrap_messages %}
+		<form action="" method="POST" class="form form-signin">
+			<i class="fas fa-glasses fa-5x"></i>
+            <h1 class="h3 mb-3 font-weight-normal">{% trans "Veja Só" %}</h1>
+            <p>Faça seu Cadastro</p>
+			{% csrf_token %}
+			{% bootstrap_form form layout='inline' %}
+			{% buttons %}
+			  <button type="submit" class="btn btn-primary">
+				Submit
+			  </button>
+			{% endbuttons %}
+		</form>
+	</body>
+</html>

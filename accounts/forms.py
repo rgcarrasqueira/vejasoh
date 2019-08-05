@@ -6,8 +6,8 @@ from django.utils.translation import ugettext_lazy as _
 class RegisterForm(UserCreationForm):
 
 	username = forms.CharField(label=_('Login de Usuário'))
-	password1 = forms.CharField(label=_('Senha de Acesso'))
-	password2 = forms.CharField(label=_('Repita sua Senha de Acesso'))
+	password1 = forms.CharField(label=_('Senha de Acesso'), widget=forms.PasswordInput())
+	password2 = forms.CharField(label=_('Repita sua Senha de Acesso'), widget=forms.PasswordInput())
 	email = forms.EmailField(label=_('E-mail'))
 	first_name = forms.CharField(label = _('Nome'))
 	last_name = forms.CharField(label = _('Sobrenome'))
